@@ -18,6 +18,7 @@ It lets you authenticate and post toots in plain text - that's it! No timelines 
 
 ## How to Run It
 1. Download and install MacPython 1.5.2 from here: <https://homepages.cwi.nl/~jack/macpython/downloads/old/MacPython152.hqx>
+   1. Note: You **must** install the CFM-68K version of MacPython, not the "regular" version. You will need the "CFM-68k Runtime Enabler" extension installed, which can be downloaded from here: <https://www.macintoshrepository.org/16985-cfm-68k-4-0>
 2. Clone this repository and copy its' contents to your old Mac!
 3. Double click `macstodon.py` which will launch the `Python IDE` program.
 4. In the IDE window which comes up, click the `Run All` button located at the top of the window.
