@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v0.2.1 (2022-11-20)
+
+* Added a beautiful new application icon by [MhzModels](https://mastodon.art/@mhzmodels)
+* Replaced a crash-to-console with a friendly, recoverable error message if the connection is lost during an HTTP request.
+
 ### v0.2 (2022-11-19)
 
 * Basically rewrote it to use the widget toolkit in a sane way.

@@ -1,4 +1,4 @@
-<h1 align="center"><img src="readme_screenshots/macstodon-640.png" alt="Macstodon"></h1>
+<h1 align="center"><img src="readme_screenshots/logo.png" alt="Macstodon"></h1>
 <h4 align="center">A silly little Mastodon client for Classic Mac OS</h4>
 
 ## About
@@ -46,7 +46,7 @@ It lets you authenticate and post toots in plain text - that's it! No timelines 
 6. Wait about 10 minutes or so for it to finish.
 
 ## Known Issues
-* SSL is not supported at all. You will need to run an SSL-stripping proxy on another machine and configure your Mac to use it. I recommend using [WebOne](https://github.com/atauenis/webone). Note that you will probably need to add your Mastodon server to the `ForceHTTPS` section of WebOne's config file (it depends on how your Mastodon instance is configured).
+* SSL is not supported at all. You will need to run an SSL-stripping proxy on another machine and configure your Mac to use it. I recommend using [WebOne](https://github.com/atauenis/webone). Note that you will probably need to add your Mastodon server to the `ForceHTTPS` section of WebOne's config file (it depends on how your Mastodon instance is configured). Some instances (i.e. `bitbang.social`) also require that the user-agent is configured to something modern-looking like `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15`
 * This also means you'll need to use `http` instead of `https` in the server URL - Python 1.5.2's `urllib` doesn't have any support whatsoever for `https`.
 * Performance can be pretty bad when it comes to parsing large JSON responses.
 * There is no support for Unicode whatsoever. This app may not work for you if you have an emoji in your username. Sorry.
@@ -66,4 +66,4 @@ License: MIT
 Extra special thanks to:  
 [Dan](https://mastodon.lol/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-[MhzModels](https://mastodon.art/@mhzmodels) - for the beautiful logo at the top of this README
+[MhzModels](https://mastodon.art/@mhzmodels) - for the beautiful logo at the top of this README, and the Macstodon application icon!
