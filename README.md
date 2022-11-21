@@ -2,15 +2,20 @@
 <h4 align="center">A silly little Mastodon client for Classic Mac OS</h4>
 
 ## About
-Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you post a plain text toot to a Mastodon server.
+Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you post a plain text toot to a Mastodon server. It has been developed on a Macintosh IIfx running System 7.1.1.
 
-It has been developed on a Macintosh IIfx running System 7.1.1, and should run on any 68K Mac OS version from 7.1 through 8.1.
-The following extensions are required, and are distributed with Macstodon:
+System Requirements are:
+ - A 68k Macintosh with a 68020, 68030, or 68040 processor
+ - At least 1.5 MB of free memory
+ - System 7.1 to Mac OS 8.1
+ - 32-bit addressing enabled
+
+The following extensions are required for System 7 users, and are distributed with Macstodon:
  - CFM-68K Runtime Enabler
  - ObjectSupportLib
  - NuDragLib.slb
 
-For System 7 users, installing Internet Config is strongly recommended as it will:
+While not strictly _required_, installing Internet Config is strongly recommended as it will:
  - allow Macstodon to automatically open your web browser to the authentication URL during the login process
  - allow you to globally set a HTTP proxy, so that you can use an SSL proxy. Without this you are restricted to pure HTTP instances (are there even any?)
 
