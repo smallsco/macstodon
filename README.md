@@ -1,5 +1,5 @@
 <h1 align="center"><img src="readme_screenshots/logo.png" alt="Macstodon"></h1>
-<h4 align="center">A silly little Mastodon client for Classic Mac OS</h4>
+<h4 align="center">A silly little Mastodon client for Classic Mac OS<br>created by <a href="https://oldbytes.space/@smallsco">@smallsco@oldbytes.space</a></h4>
 
 ## About
 Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you post a plain text toot to a Mastodon server. It has been developed on a Macintosh IIfx running System 7.1.1.
