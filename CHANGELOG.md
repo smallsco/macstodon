@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### v0.3-wip (2022-11-26)
+
+* Added a timeline view that shows the home and local timelines
+* Added some very basic HTML parsing for timeline toots
+* Bug fixes to error handling
+* Broke up source code into several files
+
 ### v0.2.1 (2022-11-20)
 
 * Added a beautiful new application icon by [MhzModels](https://mastodon.art/@mhzmodels)

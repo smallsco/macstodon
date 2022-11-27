@@ -1,0 +1,1 @@
+# ########## Constants# #########DEBUG = 0VERSION = "0.3-wip"
