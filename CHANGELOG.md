@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+### v0.4 (XXXX-XX-XX)
+
+* Introduced an ImageHandler class that handles downloading/caching of images and saving them as pixmaps.
+* User avatars (including booster avatars) are displayed in the timeline window.
+* The timeline window now displays correctly at a 512x342 display resolution, and will run in full screen at this resolution.
+* Content warnings are displayed when viewing toots in the timeline window. When clicking on a toot with a content warning, you will be prompted to confirm.
+* The character limit is now displayed in the toot window. There will be a small delay when pulling up the toot window for the first time while this data is queried from the server.
+* Code refactoring: rename helpers/consntants files, move third-party code into separate folder
+* Try to clean up unicode junk in display names, not just toot content
+
 ### v0.3 (2022-11-28)
 
 * Added a timeline view that shows the home and local timelines, and notifications
