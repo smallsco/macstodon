@@ -8,7 +8,9 @@
 * Content warnings are displayed when viewing toots in the timeline window. When clicking on a toot with a content warning, you will be prompted to confirm.
 * The character limit is now displayed in the toot window. There will be a small delay when pulling up the toot window for the first time while this data is queried from the server.
 * Code refactoring: rename helpers/consntants files, move third-party code into separate folder
-* Try to clean up unicode junk in display names, not just toot content
+* Try to clean up unicode junk in display names, not just toot content.
+* Dialogs are now rendered via the widget framework, and should no longer have their contents cut off.
+* Improved the auth experience by printing the OAuth URL in the auth dialog.
 
 ### v0.3 (2022-11-28)
 
