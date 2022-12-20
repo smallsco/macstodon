@@ -2,6 +2,7 @@
 
 ### v0.4 (XXXX-XX-XX)
 
+* Added a new splash/loading/about screen.
 * Favouriting, boosting, and bookmarking toots are now fully supported.
 * Introduced an ImageHandler class that handles downloading/caching of images and saving them as pixmaps.
 * User avatars (including booster avatars) are displayed in the timeline window. The first time you view a toot for each user, there will be a small delay while the avatar is downloaded and cached.
