@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### v0.4.1 (2022-12-21)
+
+* Fixed a dumb bug that would cause a crash if the Mastodon server returned invalid JSON.
+
 ### v0.4 (2022-12-21)
 
 * Favouriting, boosting, and bookmarking toots are now fully supported.
