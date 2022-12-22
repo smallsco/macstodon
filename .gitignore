@@ -26,6 +26,7 @@
 *.hex
 
 # macOS metadata
+.finf
 .DS_Store
 
 # PyCharm
