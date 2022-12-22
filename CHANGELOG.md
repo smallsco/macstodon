@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v0.4.2 (2022-12-22)
+
+* Replaced the JSON parser with a simpler eval-based solution which is much faster.
+* Macstodon is now a Fat Binary application and supports PowerPC architectures in addition to 68K!
+
 ### v0.4.1 (2022-12-21)
 
 * Fixed a dumb bug that would cause a crash if the Mastodon server returned invalid JSON.

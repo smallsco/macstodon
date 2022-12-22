@@ -6,21 +6,18 @@ Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you 
 
 System Requirements are:
 
-* A 68k Macintosh with a 68020, 68030, or 68040 processor
+* A 68k Macintosh with a 68020, 68030, or 68040 processor, or, any Power Macintosh
 * At least 1.5 MB of free memory (more if you want to be able to view avatars)
-* System 7.1 to Mac OS 8.1
+* System 7.1 to Mac OS 9.2.2
 * 32-bit addressing enabled
+* Internet Config installed if you are running Mac OS 8.1 or earlier
+* An SSL-stripping proxy server (such as [WebOne](https://github.com/atauenis/webone)) running on another computer on your network.
 
 The following extensions are required for System 7 users, and can be found in the "Required Extensions - System 7" folder distributed with Macstodon. System 7 users will need to copy them into the Extensions subfolder of their System Folder:
 
-* CFM-68K Runtime Enabler
+* CFM-68K Runtime Enabler (not required for Power Macintosh)
 * ObjectSupportLib
 * NuDragLib.slb
-
-While not strictly _required_, installing Internet Config is strongly recommended as it will:
-
-* allow Macstodon to automatically open your web browser to the authentication URL during the initial login process
-* allow you to globally set a HTTP proxy, so that you can use an SSL-stripping proxy. Without this you are restricted to pure HTTP instances (and I'm not sure if any such instances exist)
 
 **No support is provided for this app, and I don't plan on maintaining it long-term. This is just a fun hack project, not a serious development effort.**
 
@@ -71,9 +68,9 @@ That's it for now. Maybe more features will be implemented in a later version.
 5. Decompress the `Macstodon.rsrc.sit.hqx` file until you have `Macstodon.rsrc`. Keep this in the same directory as `Macstodon.py`.
 6. Edit line 24 of the `Macstodon.py` file, which looks like this:
 	```
-	# macfreeze: path Software:Programming:Python 1.5.2c1:Mac:Tools:IDE
+	# macfreeze: path SheepShaver:Python 1.5.2c1:Mac:Tools:IDE
 	```  
-	Change the *Software:Programming:Python 1.5.2c1:Mac:Tools:IDE* path to point to the **Mac:Tools:IDE** folder of the location where you installed MacPython.
+	Change the *SheepShaver:Python 1.5.2c1:Mac:Tools:IDE* path to point to the **Mac:Tools:IDE** folder of the location where you installed MacPython.
 7. Edit line 81 of the `macgen_bin.py` file, which comes with MacPython and is located in the **Mac:Tools:macfreeze** directory. Comment out this line, it should look like this after your change:
 	```
 	#fss.SetCreatorType('Pyta', APPL)
@@ -96,9 +93,7 @@ That's it for now. Maybe more features will be implemented in a later version.
 	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15
 	```
 * You will need to use **http** instead of **https** in the server URL for Macstodon. This is a limitation of the *urllib* library in MacPython 1.5.2.
-* Performance of parsing large JSON responses is *terrible*. I'm sorry, I don't know how to fix this. If it looks like Macstodon has hung during the "Parsing Response" stage of a progress bar, it probably hasn't, it's just taking it's sweet time. Go make a coffee and come back :)
 * There is no support for Unicode whatsoever, and there never will be. Toots or usernames with emojis and special characters in them will look funny.
-* There is no PowerPC build available because the MacPython 1.5.2 builder for PPC isn't respecting the runtime preferences that I have configured. This is *probably* a bug in this particular version of MacPython, and is *probably* fixed in later versions - which aren't 68K compatible. So if you really, really want a PPC version of this, you can try building it with MacPython 2.2 or 2.3 - I haven't tested this, though, and don't know if it will work without code changes.
 * If Macstodon actually crashes or unexpectedly quits while loading data from the server, try allocating more memory to it using the Get Info screen in the Finder.
 * If the `Timeline` window is closed, you can't get it back and will have to quit Macstodon from the File menu and relaunch it.
 * If images (avatars) fail to load, but the rest of the app seems to be working just fine, this means you need to give Macstodon more memory. Allocating more memory to it using the Get Info screen in the Finder will resolve this issue (you should also remove the image cache, see below)
@@ -115,11 +110,6 @@ Special thanks to the following third-party software, for whom without Macstodon
 Copyright ©2004 Leonard Richardson  
 License: Python  
 <https://docs.python.org/3/license.html>
-
-**JSON Decoding Algorithm**  
-Copyright ©2016 Henri Tuhola  
-License: MIT  
-<https://github.com/cheery/json-algorithm>
 
 Extra special thanks to:  
 [Dan](https://mastodon.lol/@billgoats) - for the inspiration to work on this project  
