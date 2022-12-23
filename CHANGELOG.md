@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### v0.4.3 (2022-12-23)
+
+* Repackaged the v0.4.2 release but with separate 68K and PPC apps instead of a Fat Binary.
+* For PPC users, nothing has changed for you and you don't have to upgrade.
+* For 68K users, this should fix the "Missing PythonCore" error that showed up in v0.4.2.
+
 ### v0.4.2 (2022-12-22)
 
 * Replaced the JSON parser with a simpler eval-based solution which is much faster.

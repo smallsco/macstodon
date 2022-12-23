@@ -61,27 +61,23 @@ That's it for now. Maybe more features will be implemented in a later version.
 1. Download the Macstodon source code from GitHub, and place it whereever you like on your hard disk.
 2. Download MacPython 1.5.2 from here: <https://homepages.cwi.nl/~jack/macpython/downloads/old/MacPython152.hqx>
 3. Decompress the MacPython archive and run the isntaller. Make sure you install the **CFM-68K** version of MacPython if prompted.
-4. Run the **EditPythonPrefs** application that comes with MacPython. Add the followiung line to the System-Wide preferences. Then save your changes and exit.
+4. Run the **EditPythonPrefs** application that comes with MacPython. Add the followiung lines to the System-Wide preferences. Then save your changes and exit.
 	```
 	$(PYTHON):Extensions:Imaging:PIL
+	$(PYTHON):Mac:Tools:IDE
 	```  
 5. Decompress the `Macstodon.rsrc.sit.hqx` file until you have `Macstodon.rsrc`. Keep this in the same directory as `Macstodon.py`.
-6. Edit line 24 of the `Macstodon.py` file, which looks like this:
-	```
-	# macfreeze: path SheepShaver:Python 1.5.2c1:Mac:Tools:IDE
-	```  
-	Change the *SheepShaver:Python 1.5.2c1:Mac:Tools:IDE* path to point to the **Mac:Tools:IDE** folder of the location where you installed MacPython.
-7. Edit line 81 of the `macgen_bin.py` file, which comes with MacPython and is located in the **Mac:Tools:macfreeze** directory. Comment out this line, it should look like this after your change:
+6. Edit line 81 of the `macgen_bin.py` file, which comes with MacPython and is located in the **Mac:Tools:macfreeze** directory. Comment out this line, it should look like this after your change:
 	```
 	#fss.SetCreatorType('Pyta', APPL)
 	```  
 	(This fixes a bug in MacPython 1.5.2, where the build system is overriding the creator type of the application defined in the RSRC with its' own. You can still build Macstodon without this fix, but it won't have its' lovely icon!)
-8. Double-click the `Macstodon.py` file to launch the `Python IDE` application. When the source code window appears, press `Run All`. This will launch Macstodon within the Python IDE, which will create a bunch of `.pyc` files in the source directory.
-9. Force quit the Python IDE, because Macstodon corrupts its' state and won't let you quit normally...
-10. Drag and drop the `Macstodon.py` file onto the `BuildApplication` app that comes with MacPython.
-11. When prompted, select the `Build 68K Application` radio button.
-12. Select where you want to save the app to.
-13. Wait about 10 minutes or so for the build to finish. When it's done, you should have your own self-compiled copy of Macstodon!
+7. Double-click the `Macstodon.py` file to launch the `Python IDE` application. When the source code window appears, press `Run All`. This will launch Macstodon within the Python IDE, which will create a bunch of `.pyc` files in the source directory.
+8. Force quit the Python IDE, because Macstodon corrupts its' state and won't let you quit normally...
+9. Drag and drop the `Macstodon.py` file onto the `BuildApplication` app that comes with MacPython.
+10. When prompted, select the `Build 68K Application` radio button.
+11. Select where you want to save the app to.
+12. Wait about 10 minutes or so for the build to finish. When it's done, you should have your own self-compiled copy of Macstodon!
 
 ## Known Issues
 * SSL is not supported at all, because neither the Classic Mac OS nor the ancient version of MacPython used to build Macstodon know anything about it.
