@@ -108,6 +108,6 @@ License: Python
 <https://docs.python.org/3/license.html>
 
 Extra special thanks to:  
-[Dan](https://mastodon.lol/@billgoats) - for the inspiration to work on this project  
+[Dan](https://bitbang.social/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-[MhzModels](https://mastodon.art/@mhzmodels) - for the beautiful logo at the top of this README, and the Macstodon application icon!
+MhzModels - for the beautiful logo at the top of this README, and the Macstodon application icon!

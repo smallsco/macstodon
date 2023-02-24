@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### v0.4.4 (2023-02-23)
+
+* Fixed an edge case where the app could crash after authenticating.
+* Updated some links in documentation.
+* Updated copyright year to 2023.
+
 ### v0.4.3 (2022-12-23)
 
 * Repackaged the v0.4.2 release but with separate 68K and PPC apps instead of a Fat Binary.
