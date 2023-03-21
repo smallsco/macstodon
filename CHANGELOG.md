@@ -1,5 +1,28 @@
 ## CHANGELOG
 
+### v1.0 (2023-03-20)
+
+* Implemented support for profiles! Click on a user's profile picture to bring up their profile in a new window.
+* Implemented support for user interactions, including follow/unfollow, mute/unmute, and block/unblock.
+* Implemented support for viewing and modifying user notes.
+* Added a "Find User" button to the Timeline window that allows you to search for a user by name and bring up their profile.
+* Clicking on "User" notifications that are not connected to a toot (i.e. "User foobar followed you") will bring up that user's profile.
+* Refactored the way that Macstodon does window management, this should result in the app using less memory and running faster.
+* Added a Preferences window that allows you to customize the number of toots to load into a timeline, enable/disable images and clear the cache.
+* More improvements to unicode character conversion, should see much less "junk" characters now.
+* Fixed a bug causing unicode character conversion to not take place in the notification list.
+* Removed BeautifulSoup and replaced it with a homebrewed solution for link extraction.
+* Added a button to the timeline window for displaying the links attached to a toot, and automatically opening them in your browser.
+* Added a button to the timeline window for displaying the attachments on a toot, viewing their alt text, and downloading them to your computer.
+* Added new icons for the Boost, Favourite, Bookmark, and Reply buttons, courtesy of [C.M. Harrington](https://mastodon.online/@octothorpe)!
+* Fixed a bug where the Toot window would remain open if you logged out with it open.
+* Added a menu item for logging out.
+* Fixed a JSON parsing bug introduced in 0.4.2, Macstodon will no longer rewrite "false", "true", or "null" if used in a toot.
+* Improved reliability of getting the toot character limit from the Mastodon instance.
+* The cursor will change to a watch when a progress bar window is active.
+* Fixed a bug where the CW field when posting a toot was still usable even when it was invisible.
+* Replying to a CW'ed toot will add "re: " to the CW (unless it already starts with that).
+
 ### v0.4.4 (2023-02-23)
 
 * Fixed an edge case where the app could crash after authenticating.
@@ -46,7 +69,7 @@
 
 ### v0.2.1 (2022-11-20)
 
-* Added a beautiful new application icon by [MhzModels](https://mastodon.art/@mhzmodels)
+* Added a beautiful new application icon by [MhzModels](https://artsio.com/@mhzmodels)
 * Replaced a crash-to-console with a friendly, recoverable error message if the connection is lost during an HTTP request.
 
 ### v0.2 (2022-11-19)

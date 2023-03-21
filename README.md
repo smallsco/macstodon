@@ -7,7 +7,7 @@ Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you 
 System Requirements are:
 
 * A 68k Macintosh with a 68020, 68030, or 68040 processor, or, any Power Macintosh
-* At least 1.5 MB of free memory (more if you want to be able to view avatars)
+* At least 1.5 MB of free memory (4 MB to view avatars, 8 MB to view banners)
 * System 7.1 to Mac OS 9.2.2
 * 32-bit addressing enabled
 * Internet Config installed if you are running Mac OS 8.1 or earlier
@@ -26,10 +26,22 @@ The following extensions are required for System 7 users, and can be found in th
     <img src="readme_screenshots/timeline.png?raw=true" alt="Timeline View">
 </p>
 <p align="center">
+    <img src="readme_screenshots/profile.png?raw=true" alt="Profile View">
+</p>
+<p align="center">
     <img src="readme_screenshots/toot.png?raw=true" alt="Replying to a Toot">
 </p>
 <p align="center">
     <img src="readme_screenshots/contentwarning.png?raw=true" alt="Content Warning Dialog">
+</p>
+<p align="center">
+    <img src="readme_screenshots/links.png?raw=true" alt="Viewing Links in a Toot">
+</p>
+<p align="center">
+    <img src="readme_screenshots/attachments.png?raw=true" alt="Viewing Attachments in a Toot">
+</p>
+<p align="center">
+    <img src="readme_screenshots/prefs.png?raw=true" alt="Editing Preferences ">
 </p>
 
 ## Features
@@ -40,6 +52,10 @@ The following extensions are required for System 7 users, and can be found in th
 * View your notifications
 * Favourite, boost, and bookmark toots
 * Reply to toots from others
+* Follow links in toots
+* Download attachments from toots
+* Look up users by handle and view their profiles
+* Follow/unfollow, mute/unmute, and block/unblock users
 
 That's it for now. Maybe more features will be implemented in a later version.
 
@@ -89,10 +105,10 @@ That's it for now. Maybe more features will be implemented in a later version.
 	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15
 	```
 * You will need to use **http** instead of **https** in the server URL for Macstodon. This is a limitation of the *urllib* library in MacPython 1.5.2.
-* There is no support for Unicode whatsoever, and there never will be. Toots or usernames with emojis and special characters in them will look funny.
+* There is no support for Unicode whatsoever, and there never will be. Toots or usernames with emojis and special characters in them will have those characters removed.
 * If Macstodon actually crashes or unexpectedly quits while loading data from the server, try allocating more memory to it using the Get Info screen in the Finder.
-* If the `Timeline` window is closed, you can't get it back and will have to quit Macstodon from the File menu and relaunch it.
 * If images (avatars) fail to load, but the rest of the app seems to be working just fine, this means you need to give Macstodon more memory. Allocating more memory to it using the Get Info screen in the Finder will resolve this issue (you should also remove the image cache, see below)
+* There is a nasty memory leak around the loading of uncached banner images. Enabling the option to view banner images will cause Macstodon to run out of memory and crash pretty quickly.
 
 ## Troubleshooting
 When in doubt, delete the preferences file. It is named `Macstodon Prefs` and lives in the Preferences folder in your System Folder. Deleting the preferences file will make Macstodon forget about the saved server, tokens, etc.  
@@ -100,14 +116,8 @@ When in doubt, delete the preferences file. It is named `Macstodon Prefs` and li
 There is also a subfolder of the Preferences folder named Macstodon Cache. This folder contains avatars and other images that have been resized, so we don't need to download and resize them again the next time we encounter them in the wild. Occasionally this can become corrupted and an original image can be cached instead of a resized one, leading to poor performance and high memory usage. If this happens, you can delete this folder, it will be recreated on the next launch.
 
 ## Credits
-Special thanks to the following third-party software, for whom without Macstodon would not be possible:
-
-**BeautifulSoup pre-1.3**  
-Copyright ©2004 Leonard Richardson  
-License: Python  
-<https://docs.python.org/3/license.html>
-
-Extra special thanks to:  
+Special thanks to the following people, for whom without Macstodon would not be possible:  
 [Dan](https://bitbang.social/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-MhzModels - for the beautiful logo at the top of this README, and the Macstodon application icon!
+[MhzModels](https://artsio.com/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon
+[CM Harrington](https://mastodon.online/@octothorpe) - for additional icon design
