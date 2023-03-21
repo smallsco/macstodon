@@ -119,5 +119,5 @@ There is also a subfolder of the Preferences folder named Macstodon Cache. This 
 Special thanks to the following people, for whom without Macstodon would not be possible:  
 [Dan](https://bitbang.social/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-[MhzModels](https://artsio.com/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon
+[MhzModels](https://artsio.com/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon  
 [CM Harrington](https://mastodon.online/@octothorpe) - for additional icon design
