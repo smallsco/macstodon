@@ -7,7 +7,7 @@ Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you 
 System Requirements are:
 
 * A 68k Macintosh with a 68020, 68030, or 68040 processor, or, any Power Macintosh
-* At least 1.5 MB of free memory (4 MB to view avatars, 8 MB to view banners)
+* At least 4 MB of free memory (8-16 MB strongly recommended)
 * System 7.1 to Mac OS 9.2.2
 * 32-bit addressing enabled
 * Internet Config installed if you are running Mac OS 8.1 or earlier

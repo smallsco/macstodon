@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### v1.0.1 (2023-03-22)
+
+* Fixed a major bug that could corrupt the timeline state when removing a boost from a toot.
+* Fixed the bookmark button on timeline/profiles toggling the favourite button when pressed.
+* Fixed a typo in the error message when failing to favourite/unfavourite a toot.
+* Updated Macstodon's default memory requirements to 4 MB minimum, 16 MB preferred
+
 ### v1.0 (2023-03-20)
 
 * Implemented support for profiles! Click on a user's profile picture to bring up their profile in a new window.
