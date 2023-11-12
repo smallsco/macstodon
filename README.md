@@ -48,8 +48,7 @@ The following extensions are required for System 7 users, and can be found in th
 
 * Authentication
 * Post plain-text toots with full control of visibility, and optional content warnings
-* View your home and local timelines
-* View your notifications
+* View any timeline including lists and hashtags in a customizable three-column view
 * Favourite, boost, and bookmark toots
 * Reply to toots from others
 * Follow links in toots
@@ -76,8 +75,8 @@ That's it for now. Maybe more features will be implemented in a later version.
 ## How to compile it
 1. Download the Macstodon source code from GitHub, and place it whereever you like on your hard disk.
 2. Download MacPython 1.5.2 from here: <https://homepages.cwi.nl/~jack/macpython/downloads/old/MacPython152.hqx>
-3. Decompress the MacPython archive and run the isntaller. Make sure you install the **CFM-68K** version of MacPython if prompted.
-4. Run the **EditPythonPrefs** application that comes with MacPython. Add the followiung lines to the System-Wide preferences. Then save your changes and exit.
+3. Decompress the MacPython archive and run the installer. Make sure you install the **CFM-68K** version of MacPython if prompted.
+4. Run the **EditPythonPrefs** application that comes with MacPython. Add the following lines to the System-Wide preferences. Then save your changes and exit.
 	```
 	$(PYTHON):Extensions:Imaging:PIL
 	$(PYTHON):Mac:Tools:IDE
@@ -119,5 +118,5 @@ There is also a subfolder of the Preferences folder named `Macstodon Cache`. Thi
 Special thanks to the following people, for whom without Macstodon would not be possible:  
 [Dan](https://bitbang.social/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-[MhzModels](https://artsio.com/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon  
+[MhzModels](https://tech.lgbt/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon  
 [CM Harrington](https://mastodon.online/@octothorpe) - for additional icon design

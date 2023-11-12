@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### v1.1 (2023-11-12)
+
+* The timeline window now allows you to select which timeline is displayed in each column, using the drop-down menu next to the refresh button.
+* The preferences window now allows you to select the default timeline that is loaded in each column at Macstodon launch.
+* The title bar of loading dialogs now states the overall activity taking place.
+* Fixed a bug that caused the Links and Attachments buttons to have glitched icons under certain circumstances.
+* Fixed a bug that would display the wrong error message if the current user ID could not be retrieved from the server.
+
 ### v1.0.1 (2023-03-22)
 
 * Fixed a major bug that could corrupt the timeline state when removing a boost from a toot.
@@ -76,7 +84,7 @@
 
 ### v0.2.1 (2022-11-20)
 
-* Added a beautiful new application icon by [MhzModels](https://artsio.com/@mhzmodels)
+* Added a beautiful new application icon by [MhzModels](https://tech.lgbt/@mhzmodels)
 * Replaced a crash-to-console with a friendly, recoverable error message if the connection is lost during an HTTP request.
 
 ### v0.2 (2022-11-19)
