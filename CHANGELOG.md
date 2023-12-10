@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### v1.1.1 (2023-12-10)
+
+* Fixed a dumb bug that would cause Macstodon to crash after authentication if you were trying to sign in to an account that had no lists.
+
 ### v1.1 (2023-11-12)
 
 * The timeline window now allows you to select which timeline is displayed in each column, using the drop-down menu next to the refresh button.
