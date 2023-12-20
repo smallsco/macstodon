@@ -12,6 +12,7 @@ System Requirements are:
 * 32-bit addressing enabled
 * Internet Config installed if you are running Mac OS 8.1 or earlier
 * An SSL-stripping proxy server (such as [WebOne](https://github.com/atauenis/webone)) running on another computer on your network.
+  * Note: Macstodon is not fully compatible with WebOne 0.16 yet, please use version 0.15.3 for the best experience.
 
 The following extensions are required for System 7 users, and can be found in the "Required Extensions - System 7" folder distributed with Macstodon. System 7 users will need to copy them into the Extensions subfolder of their System Folder:
 
@@ -98,6 +99,7 @@ That's it for now. Maybe more features will be implemented in a later version.
 * SSL is not supported at all, because neither the Classic Mac OS nor the ancient version of MacPython used to build Macstodon know anything about it.
 * This means, in order to access your instance, you will almost certainly need to run an SSL-stripping proxy server running on another computer on your network, and configure your Mac to use it. THis is outside the scope of this readme, however:
 	* I strongly recommend the use of the [WebOne](https://github.com/atauenis/webone) proxy, which is what I develop with. If you are also using WebOne, you may need to make the following config changes:
+        * Note: Macstodon is not fully compatible with WebOne 0.16 yet, please use version 0.15.3 for the best experience.
 	* You may need to add your Mastodon server's hostname to the `ForceHTTPS` section of WebOne's config file, depending on how your Mastodon instance is configured.
 	* Also, some instances (i.e. `bitbang.social`) require that the User-Agent is configured to something modern-looking before they will accept connections through WebOne. This is known to work:  
 	```
