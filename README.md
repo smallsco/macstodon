@@ -12,7 +12,6 @@ System Requirements are:
 * 32-bit addressing enabled
 * Internet Config installed if you are running Mac OS 8.1 or earlier
 * An SSL-stripping proxy server (such as [WebOne](https://github.com/atauenis/webone)) running on another computer on your network.
-  * Note: Macstodon is not fully compatible with WebOne 0.16 yet, please use version 0.15.3 for the best experience.
 
 The following extensions are required for System 7 users, and can be found in the "Required Extensions - System 7" folder distributed with Macstodon. System 7 users will need to copy them into the Extensions subfolder of their System Folder:
 
@@ -89,7 +88,7 @@ That's it for now. Maybe more features will be implemented in a later version.
 	```  
 	(This fixes a bug in MacPython 1.5.2, where the build system is overriding the creator type of the application defined in the RSRC with its' own. You can still build Macstodon without this fix, but it won't have its' lovely icon!)
 7. Double-click the `Macstodon.py` file to launch the `Python IDE` application. When the source code window appears, press `Run All`. This will launch Macstodon within the Python IDE, which will create a bunch of `.pyc` files in the source directory.
-8. Force quit the Python IDE, because Macstodon corrupts its' state and won't let you quit normally...
+8. Force quit the Python IDE, because Macstodon corrupts its state and won't let you quit normally...
 9. Drag and drop the `Macstodon.py` file onto the `BuildApplication` app that comes with MacPython.
 10. When prompted, select the `Build 68K Application` radio button.
 11. Select where you want to save the app to.
@@ -97,14 +96,15 @@ That's it for now. Maybe more features will be implemented in a later version.
 
 ## Known Issues
 * SSL is not supported at all, because neither the Classic Mac OS nor the ancient version of MacPython used to build Macstodon know anything about it.
-* This means, in order to access your instance, you will almost certainly need to run an SSL-stripping proxy server running on another computer on your network, and configure your Mac to use it. THis is outside the scope of this readme, however:
-	* I strongly recommend the use of the [WebOne](https://github.com/atauenis/webone) proxy, which is what I develop with. If you are also using WebOne, you may need to make the following config changes:
-        * Note: Macstodon is not fully compatible with WebOne 0.16 yet, please use version 0.15.3 for the best experience.
-	* You may need to add your Mastodon server's hostname to the `ForceHTTPS` section of WebOne's config file, depending on how your Mastodon instance is configured.
-	* Also, some instances (i.e. `bitbang.social`) require that the User-Agent is configured to something modern-looking before they will accept connections through WebOne. This is known to work:  
-	```
-	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15
-	```
+* This means, in order to use Macstodon, you **must** run an SSL-stripping proxy server running on another computer on your network, and configure your Mac to use it. This is outside the scope of this readme, however:
+	* I strongly recommend the use of the [WebOne](https://github.com/atauenis/webone) proxy, which is what I develop with. Other proxy servers have not been tested, and may or may not work correctly with Macstodon.
+	* If you are using WebOne 0.16 or later, you *probably* don't need to make any changes to WebOne's configuration. Give Macstodon a try and see if it works for you!
+	* If you are using WebOne 0.15.3 or earlier, **OR** your Mastodon instance is running behind CloudFlare (i.e. `bitbang.social`), you will need to make two changes to the WebOne configuration:
+		* You will need to add your Mastodon server's hostname to the `ForceHTTPS` section of WebOne's config file.
+		* You will need to change the User-Agent to something modern-looking, for example, the following is known to work:  
+		```
+		Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Safari/605.1.15
+		```
 * You will need to use **http** instead of **https** in the server URL for Macstodon. This is a limitation of the *urllib* library in MacPython 1.5.2.
 * There is no support for Unicode whatsoever, and there never will be. Toots or usernames with emojis and special characters in them will have those characters removed.
 * If Macstodon actually crashes or unexpectedly quits while loading data from the server, try allocating more memory to it using the Get Info screen in the Finder.

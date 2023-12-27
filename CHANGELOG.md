@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### v1.1.2 (2023-12-26)
+
+* Macstodon is now fully compatible with WebOne 0.16+, and should also feature improved compatibility with other web proxies that can strip SSL.
+
 ### v1.1.1 (2023-12-10)
 
 * Fixed a dumb bug that would cause Macstodon to crash after authentication if you were trying to sign in to an account that had no lists.
