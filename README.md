@@ -2,9 +2,11 @@
 <h4 align="center">A basic Mastodon client for Classic Mac OS<br>created by <a href="https://oldbytes.space/@smallsco">@smallsco@oldbytes.space</a></h4>
 
 ## About
-Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you post toots and view timelines using a Mastodon server. It has been developed on a Macintosh IIfx running System 7.1.1.
+Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you interact with a Mastodon server by viewing timelines, posting toots, and more!
 
-System Requirements are:
+**No support is provided for this app, and I don't plan on maintaining it long-term. This is just a fun hack project, not a serious development effort.**
+
+## System Requirements
 
 * A 68k Macintosh with a 68020, 68030, or 68040 processor, or, any Power Macintosh
 * At least 4 MB of free memory (8-16 MB strongly recommended)
@@ -13,13 +15,29 @@ System Requirements are:
 * Internet Config installed if you are running Mac OS 8.1 or earlier
 * An SSL-stripping proxy server (such as [WebOne](https://github.com/atauenis/webone)) running on another computer on your network.
 
-The following extensions are required for System 7 users, and can be found in the "Required Extensions - System 7" folder distributed with Macstodon. System 7 users will need to copy them into the Extensions subfolder of their System Folder:
+#### Required Extensions
 
-* CFM-68K Runtime Enabler (not required for Power Macintosh)
+Note: Macstodon comes with a bundled installer that will install any extensions that your OS version requires. However, if you are building from source, you will need to manually install the below extensions.
+
+For 68k Macs running System 7.1 through System 7.6.1:
+
+* CFM-68K Runtime Enabler
 * ObjectSupportLib
 * NuDragLib.slb
 
-**No support is provided for this app, and I don't plan on maintaining it long-term. This is just a fun hack project, not a serious development effort.**
+#### Optional Extensions
+
+For text-to-speech support on 68k Macs:
+
+* AppleScript
+* Finder 7.1.3 or newer (the "Scriptable Finder")
+* Finder Scripting Extension
+* Say Scripting Addition
+* PlainTalk
+
+For text-to-speech support on PPC Macs:
+
+* PlainTalk
 
 ## Screenshots
 <p align="center">
@@ -53,6 +71,7 @@ The following extensions are required for System 7 users, and can be found in th
 * Reply to toots from others
 * Follow links in toots
 * Download attachments from toots
+* Have any toot read out to you using PlainTalk text-to-speech
 * Look up users by handle and view their profiles
 * Follow/unfollow, mute/unmute, and block/unblock users
 
@@ -60,9 +79,9 @@ That's it for now. Maybe more features will be implemented in a later version.
 
 ## How to Run It
 1. Download and install the latest version of Macstodon from the Releases page: <https://github.com/smallsco/macstodon/releases>
-2. Decompress the archive and place the Macstodon application whereever you like on your hard disk.
-3. If you're running System 7, copy the files in the `Required Extensions - System 7` folder into the `Extensions` folder (subdirectory of `System Folder`) and reboot your Mac.
-4. Double-click the Macstodon app to run it!
+2. Decompress the archive and launch the Macstodon Installer application.
+3. Follow the instructions in the Macstodon installer, selecting a folder to install to, and rebooting your machine when the installation completes.
+4. Double-click the Macstodon app (in the folder you selected during the installation) to run it!
 5. In the "Server" window that appears, type the full URL to your Mastodon server, using **http** instead of **https**, and **without the trailing slash**. Then click the `Login` button.
 6. After a moment, your web browser should automatically launch to your Mastodon instance's authentication page. Log in here, and you will be redirected to another page with a code on it. Copy this code to the clipboard.
 7. Now return to the Macstodon application. An `Auth` window will have appeared with another text box, paste the code into this box and press the `OK` button.
@@ -73,9 +92,12 @@ That's it for now. Maybe more features will be implemented in a later version.
 12. Clicking `Quit` in the `Server` window will quit Macstodon. The next time you run it, you will not need to re-authenticate unless you change the server URL.
 
 ## How to compile it
+
+Note: Macstodon **must** be compiled using a PowerPC Macintosh. The resulting binary will still work on 68K machines, but the compilation must happen on a PowerPC.
+
 1. Download the Macstodon source code from GitHub, and place it whereever you like on your hard disk.
 2. Download MacPython 1.5.2 from here: <https://homepages.cwi.nl/~jack/macpython/downloads/old/MacPython152.hqx>
-3. Decompress the MacPython archive and run the installer. Make sure you install the **CFM-68K** version of MacPython if prompted.
+3. Decompress the MacPython archive and run the installer. Select the **Custom Install** option from the dropdown, then select the **Minimal Install for Any Macintosh with CFM** option. This is the only option that will let you build fat binaries.
 4. Run the **EditPythonPrefs** application that comes with MacPython. Add the following lines to the System-Wide preferences. Then save your changes and exit.
 	```
 	$(PYTHON):Extensions:Imaging:PIL
@@ -87,12 +109,10 @@ That's it for now. Maybe more features will be implemented in a later version.
 	#fss.SetCreatorType('Pyta', APPL)
 	```  
 	(This fixes a bug in MacPython 1.5.2, where the build system is overriding the creator type of the application defined in the RSRC with its' own. You can still build Macstodon without this fix, but it won't have its' lovely icon!)
-7. Double-click the `Macstodon.py` file to launch the `Python IDE` application. When the source code window appears, press `Run All`. This will launch Macstodon within the Python IDE, which will create a bunch of `.pyc` files in the source directory.
-8. Force quit the Python IDE, because Macstodon corrupts its state and won't let you quit normally...
-9. Drag and drop the `Macstodon.py` file onto the `BuildApplication` app that comes with MacPython.
-10. When prompted, select the `Build 68K Application` radio button.
-11. Select where you want to save the app to.
-12. Wait about 10 minutes or so for the build to finish. When it's done, you should have your own self-compiled copy of Macstodon!
+7. Drag and drop the `Macstodon.py` file onto the `BuildApplication` app that comes with MacPython.
+8. When prompted, select the `Build FAT Application` radio button.
+9. Select where you want to save the app to.
+10. Wait about 10 minutes or so for the build to finish. When it's done, you should have your own self-compiled copy of Macstodon!
 
 ## Known Issues
 * SSL is not supported at all, because neither the Classic Mac OS nor the ancient version of MacPython used to build Macstodon know anything about it.
@@ -120,5 +140,5 @@ There is also a subfolder of the Preferences folder named `Macstodon Cache`. Thi
 Special thanks to the following people, for whom without Macstodon would not be possible:  
 [Dan](https://bitbang.social/@billgoats) - for the inspiration to work on this project  
 [Mingo](https://oldbytes.space/@mingo) - for [suggesting the name](https://oldbytes.space/@mingo/109316322622806248)  
-[MhzModels](https://tech.lgbt/@mhzmodels) - for the beautiful logo at the top of this README, and the application icon  
+MhzModels - for the beautiful logo at the top of this README (and the splash screen), and the application icon  
 [CM Harrington](https://mastodon.online/@octothorpe) - for additional icon design

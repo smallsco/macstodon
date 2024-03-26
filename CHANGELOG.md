@@ -1,5 +1,18 @@
 ## CHANGELOG
 
+### v1.2 (2024-03-25)
+
+* Implemented Toot-To-Speech (TTS) support, select a toot and press the new Speak button to have the toot read out to you!
+* Fixed a bug that could cause toots from multiple columns to be highlighted at once under certain conditions.
+* Improved exception handling - Macstodon will log errors to a file instead of dropping to a console window.
+* Removed several MacPython dependencies that were being included during the build process but were unused.
+* Dropped support for running Macstodon via the MacPython IDE, which never really worked properly anyway.
+* Macstodon is once again a single Fat Binary application - build process has been optimized.
+* Tweaks to the image caching process that may _slightly_ improve memory usage.
+* Images are now always cached, unconditionally.
+* Removed unused media cache directory.
+* Updated copyright year to 2024.
+
 ### v1.1.2 (2023-12-26)
 
 * Macstodon is now fully compatible with WebOne 0.16+, and should also feature improved compatibility with other web proxies that can strip SSL.
