@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### v1.2.2 (2024-05-05)
+
+* Modified the Macstodon installer so that it will no longer attempt to update the Finder on international versions of System 7.1.
+
 ### v1.2 (2024-03-25)
 
 * Implemented Toot-To-Speech (TTS) support, select a toot and press the new Speak button to have the toot read out to you!

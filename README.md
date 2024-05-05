@@ -19,6 +19,8 @@ Macstodon is an app written in MacPython 1.5.2 for Classic Mac OS that lets you 
 
 Note: Macstodon comes with a bundled installer that will install any extensions that your OS version requires. However, if you are building from source, you will need to manually install the below extensions.
 
+(Exception: If you are running an international version of System 7.1, you will need to manually update to Finder 7.1.3 or later in order to use text-to-speech functionality.)
+
 For 68k Macs running System 7.1 through System 7.6.1:
 
 * CFM-68K Runtime Enabler
